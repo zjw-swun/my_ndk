@@ -24,9 +24,30 @@ public class CyptoUtils {
     public static final byte[] IVBTS = {0x38, 0x31, 0x37, 0x34, 0x36, 0x33, 0x35, 0x33, 0x32, 0x31, 0x34, 0x38, 0x37, 0x36, 0x35, 0x32};
     public static final String KEY_ALGORITHM = "AES";
     public static final String KEY_ALGORITHM_PADDING = "AES/CBC/PKCS5Padding";
-//	static {
-//		System.loadLibrary("dc");
-//	}
+
+
+	static {
+		System.loadLibrary("encode-lib");
+	}
+
+    /**
+     * AES加密
+     *
+     * @param context
+     * @param str
+     * @return
+     */
+    public static native String encode(Object context, String str);
+
+
+    /**
+     * AES 解密
+     *
+     * @param context
+     * @param str
+     * @return UNSIGNATURE ： sign not pass .
+     */
+    public static native String decode(Object context, String str);
 
 
     //AES  decrypt解密
