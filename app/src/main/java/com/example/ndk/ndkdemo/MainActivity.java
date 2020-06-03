@@ -3,6 +3,7 @@ package com.example.ndk.ndkdemo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,11 +20,14 @@ public class MainActivity extends AppCompatActivity {
         TextView tv_show = (TextView) findViewById(R.id.tv_show);
         tv_show.setText(SignHelper.getSign(this));
 
-//        if (SignHelper.getSignature(this).contains(SignHelper.getSign(this))) {
-//            System.out.println("成功");
-//        } else {
-//            System.out.println("失败");
-//        }
+        //是否二次打包
+        if (SignHelper.checkSha1(this)) {
+            System.out.println("没有被二次打包");
+            Toast.makeText(this,"没有被二次打包",Toast.LENGTH_LONG).show();
+        } else {
+            System.out.println("被二次打包了");
+            Toast.makeText(this,"被二次打包了",Toast.LENGTH_LONG).show();
+        }
 
         String aesEncode = CyptoUtils.aesEncode("我会好好的");
         System.out.println("加密后：" + aesEncode);

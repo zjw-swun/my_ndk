@@ -4,8 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/NDKDemo.iml" filepath="$PROJECT_DIR$/NDKDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ndk.iml" filepath="$PROJECT_DIR$/ndk.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/ndk-app.iml" filepath="$PROJECT_DIR$/app/ndk-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ndk.iml" filepath="$PROJECT_DIR$/ndk.iml" group="ndk" />
+      <module fileurl="file://$PROJECT_DIR$/app/ndk-app.iml" filepath="$PROJECT_DIR$/app/ndk-app.iml" group="ndk/app" />
     </modules>
   </component>
 </project>
