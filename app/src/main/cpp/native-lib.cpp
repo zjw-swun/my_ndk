@@ -1,4 +1,6 @@
 #include <jni.h>
+#include <string>
+#include<android/log.h>
 #include"valid.cpp"
 
 extern "C"
@@ -49,4 +51,18 @@ Java_com_example_ndk_ndkdemo_SignHelper_getSignToken(
     } else {
         return env->NewStringUTF("获取失败，请检查valid.cpp文件配置的sha1值");
     }
+}
+
+
+// 测试crash
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_example_ndk_ndkdemo_SignHelper_throwNativeCrash(JNIEnv *env, jobject thiz) {
+//    int i = 0 / 0;
+//    jstring j = (jstring) "132" + i;
+//    char *name = const_cast<char *>(env->GetStringUTFChars(j, NULL));
+//    __android_log_print(ANDROID_LOG_INFO, "hello", "%s", &"jni will crash"[(*name)]);
+    // 向自身发送一个信号
+    raise(SIGQUIT);
+
 }

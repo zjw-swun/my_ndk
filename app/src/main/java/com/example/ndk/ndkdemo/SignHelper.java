@@ -25,6 +25,7 @@ public class SignHelper {
     public static native String getSignToken(Context context,String userId);
     public static native String getSignaturesSha1(Context context);
     public static native boolean checkSha1(Context context);
+    public static native void throwNativeCrash();
 
 
 

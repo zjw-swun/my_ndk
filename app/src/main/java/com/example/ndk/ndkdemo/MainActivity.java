@@ -1,7 +1,8 @@
 package com.example.ndk.ndkdemo;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +20,12 @@ public class MainActivity extends AppCompatActivity {
 
         TextView tv_show = (TextView) findViewById(R.id.tv_show);
         tv_show.setText(SignHelper.getSign(this));
+        tv_show.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SignHelper.throwNativeCrash();
+            }
+        });
 
         //是否二次打包
         if (SignHelper.checkSha1(this)) {
